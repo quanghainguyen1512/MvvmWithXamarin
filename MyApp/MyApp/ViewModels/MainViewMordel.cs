@@ -12,7 +12,7 @@ namespace MyApp.ViewModels
 {
     public class MainViewMordel : BaseViewModel
     {
-        private INavigation _navigation;
+        private readonly INavigation _navigation;
         private Contact _contactSelected;
         public List<Contact> Contacts { get; set; }
 
