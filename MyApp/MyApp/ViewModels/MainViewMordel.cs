@@ -37,6 +37,8 @@ namespace MyApp.ViewModels
             _navigation = navigation;
 
             Contacts = new List<Contact>(Data.GetContacts());
+
+            Title = "My App";
         }
     }
 }

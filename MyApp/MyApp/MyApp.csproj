@@ -41,6 +41,7 @@
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\DetailViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewMordel.cs" />
     <Compile Include="Views\DetailView.xaml.cs">

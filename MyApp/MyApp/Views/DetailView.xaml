@@ -1,18 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MyApp.Views.DetailView">
-    <Grid>
+             x:Class="MyApp.Views.DetailView"
+             Title="{Binding Title}">
+    <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="60"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         
-        <Image Grid.Row="0" Grid.Column="0" he></Image>
+        <Image Source="{Binding Contact.PhotoUrl}" 
+               Grid.Row="0" 
+               Grid.Column="0"
+               HeightRequest="60" 
+               WidthRequest="60"
+               Aspect="Fill"/>
+        <StackLayout Grid.Column="1"
+                     Grid.Row="0">
+            <Label Text="{Binding Contact.Company}" FontAttributes="Bold"/>
+            <Label Text="{Binding Contact.JobTitle}" FontSize="14"/>
+        </StackLayout>
+        
+        <StackLayout Grid.Row="1"
+                     Grid.ColumnSpan="2">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="http://www.freeiconspng.com/uploads/contact-methods-phone-icon-512x512-pixel-3.png" 
+                       WidthRequest="20"
+                       HeightRequest="20"/>
+                <Label Text="{Binding Contact.Phone}" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="http://pngimg.com/uploads/email/email_PNG23.png" 
+                       WidthRequest="20"
+                       HeightRequest="20"/>
+                <Label Text="{Binding Contact.Email}" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="https://cdn2.iconfinder.com/data/icons/e-commerce-4/256/Shop_Locator-512.png" 
+                       WidthRequest="20"
+                       HeightRequest="20"/>
+                <Label Text="{Binding Contact.Address}" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+        </StackLayout>
+        
+        <Grid Grid.Row="2"
+              Grid.Column="0"
+              Grid.ColumnSpan="2" BackgroundColor="Gray"></Grid>
     </Grid>
 </ContentPage>
